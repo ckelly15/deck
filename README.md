@@ -1,6 +1,8 @@
 deck
 ====
-public class Deck extends Card
+import java.util.ArrayList;
+
+public class Deck
 {
    private ArrayList<Card> deck;
   
@@ -9,30 +11,40 @@ public static int values = 13;
 public static int suits = 4; 
 public static int aCard =values * suits; 
 
-Card[] deck = new Card[aCard -1]; 
-int x = 0; 
+
 
 public Deck()
  {
-while(x < 52)
+     int x = 0;
+while(x < 51)
 { 
-
-
-for(int i = 1; i <= values; i++)
-    {
 
     for(int y = 1; y <= suits; y++)
         {
 
-        deck[x] = new Card(i,y); 
+        deck[x] = new Card(y,"HEARTS"); 
         x++; 
         }
+    for(int j = 1; j <= suits; j++)
+    {
+        deck[x] = new Card(j, "SPADES");
+        x++;
     }
-
+    for(int u = 0; u <= suits; u++)
+    {
+        deck[x] = new Card(u, "DIAMONDS");
+        x++;
+    }
+    for(int q = 0; q <= suits; q++)
+    {
+        deck[x] = new Card(q, "CLUBS");
+        x++;
+    }
+    
 }
 }
 
-    public Card getCard(int p)
+public Card getCard(int p)
     {
     return deck[p-1];   
     }
